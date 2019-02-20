@@ -1,0 +1,82 @@
+users:
+  hello:
+    username: hello
+    articleIds:
+      - 1
+    commentIds:
+      - 1
+  hi:
+    username: hi
+    articleIds:
+      - 2
+    commentIds:
+      - 2
+  mom:
+    username: mom
+    articleIds: []
+    commentIds:
+      - 3
+  dad:
+    username: dad
+    articleIds: []
+    commentIds:
+      - 4
+articles:
+  '1':
+    id: 1
+    title: test
+    url: test agian again again
+    username: hello
+    commentIds:
+      - 1
+    upvotedBy: []
+    downvotedBy: []
+    comments:
+      - &ref_0
+        id: 1
+        body: 'one comment, one like'
+        username: hello
+        articleId: 1
+        upvotedBy:
+          - hello
+        downvotedBy: []
+  '2':
+    id: 2
+    title: jo
+    url: jo ir;
+    username: hi
+    commentIds:
+      - 2
+      - 3
+      - 4
+    upvotedBy:
+      - mom
+    downvotedBy: []
+    comments:
+      - &ref_1
+        id: 2
+        body: comment is here
+        username: hi
+        articleId: 2
+        upvotedBy: []
+        downvotedBy: []
+      - &ref_2
+        id: 3
+        body: mom's comment
+        username: mom
+        articleId: 2
+        upvotedBy: []
+        downvotedBy: []
+comments:
+  '1': *ref_0
+  '2': *ref_1
+  '3': *ref_2
+  '4':
+    id: 4
+    body: dad's comment maroo
+    username: dad
+    articleId: 2
+    upvotedBy: []
+    downvotedBy: []
+nextArticleId: 3
+nextCommentId: 5
